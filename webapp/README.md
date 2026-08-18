@@ -61,6 +61,7 @@ webapp/
    python app.py
    ```
 4. Open `http://127.0.0.1:5000` in a browser.
+
 ## Screenshots
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/87cc00e7-2b50-4137-b417-d23f11be3e16" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65162393-a615-4bf0-b0dc-e866711f8982" />
