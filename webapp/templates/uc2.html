@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Use Case 2 — Exploratory Analysis &amp; Visualization</h3>
+
+<h5 class="mt-4">Crime Trend Over Years</h5>
+{{ yearly_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/07_crime_trend_yearly.png') }}">
+
+<h5 class="mt-4">Top 10 Crime Categories</h5>
+{{ top10_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/08_top10_crime_categories.png') }}">
+
+<h5 class="mt-4">Overall Arrest Rate</h5>
+<p>{{ arrest_rate }}%</p>
+
+<h5 class="mt-4">Crime Frequency: Month vs Day of Week</h5>
+<img class="chart-img" src="{{ url_for('static', filename='charts/09_heatmap_month_dayofweek.png') }}">
+
+<h5 class="mt-4">Top 10 Community Areas</h5>
+{{ areas_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/10_top10_community_areas.png') }}">
+{% endblock %}

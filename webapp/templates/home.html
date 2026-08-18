@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Chicago Crime Analytics — Overview</h2>
+<p class="text-muted">CPD crime data pipeline: ingest &rarr; clean &rarr; store &rarr; analyze &rarr; report</p>
+
+<div class="row g-3 my-3">
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <h6 class="text-muted">Total Records</h6>
+            <h3>{{ summary.rows }}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <h6 class="text-muted">Columns</h6>
+            <h3>{{ summary.cols }}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <h6 class="text-muted">Unique Crime Types</h6>
+            <h3>{{ summary.unique_crime_types }}</h3>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card p-3 text-center">
+            <h6 class="text-muted">Overall Arrest Rate</h6>
+            <h3>{{ summary.arrest_rate }}%</h3>
+        </div>
+    </div>
+</div>
+
+<p><strong>Date range:</strong> {{ summary.date_min }} to {{ summary.date_max }}</p>
+
+<a href="/export/summary-report" class="btn btn-primary">Export Summary Report (PDF)</a>
+{% endblock %}

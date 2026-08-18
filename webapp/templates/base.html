@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Chicago Crime Analytics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .chart-img { max-width: 100%; border: 1px solid #ddd; border-radius: 6px; margin: 15px 0; }
+        table { font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand navbar-dark bg-dark px-3">
+    <span class="navbar-brand">CPD Crime Analytics</span>
+    <div class="navbar-nav flex-row gap-2">
+        <a class="btn btn-outline-light btn-sm" href="/">Home</a>
+        <a class="btn btn-outline-light btn-sm" href="/usecase1">UC1: Load &amp; Clean</a>
+        <a class="btn btn-outline-light btn-sm" href="/usecase2">UC2: EDA</a>
+        <a class="btn btn-outline-light btn-sm" href="/usecase3">UC3: Stats</a>
+        <a class="btn btn-outline-light btn-sm" href="/usecase4">UC4: SQL Reporting</a>
+    </div>
+</nav>
+<div class="container mt-4 mb-5">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

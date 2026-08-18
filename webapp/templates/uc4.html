@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Use Case 4 — MySQL/SQLite Reporting &amp; Integration</h3>
+
+<h5 class="mt-4">Top 5 Crime Types (with %)</h5>
+{{ top5_table | safe }}
+
+<h5 class="mt-4">Arrest Count Per Year</h5>
+{{ arrests_table | safe }}
+
+<h5 class="mt-4">View: vw_crime_yearly</h5>
+{{ yearly_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/05_sql_crime_per_year.png') }}">
+
+<h5 class="mt-4">View: vw_crime_by_category</h5>
+{{ category_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/06_sql_crime_by_category.png') }}">
+{% endblock %}

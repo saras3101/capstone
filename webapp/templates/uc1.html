@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Use Case 1 — Load &amp; Clean Chicago Crime Data</h3>
+
+<p><strong>Shape (rows, columns):</strong> {{ info.shape[0] }}, {{ info.shape[1] }}</p>
+<p><strong>Unique crime types:</strong> {{ info.unique_crime_types }}</p>
+
+<h5 class="mt-4">Schema / Data Types</h5>
+{{ info.dtypes_table | safe }}
+
+<h5 class="mt-4">Missing Values (%)</h5>
+{{ info.missing_table | safe }}
+
+<h5 class="mt-4">First 10 Rows</h5>
+<div style="overflow-x:auto;">
+{{ info.head_table | safe }}
+</div>
+{% endblock %}

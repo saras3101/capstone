@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Use Case 3 — Statistical Insights &amp; Pattern Detection</h3>
+
+<h5 class="mt-4">Crime Intensity by Hour of Day</h5>
+<img class="chart-img" src="{{ url_for('static', filename='charts/11_crimes_by_hour.png') }}">
+
+<h5 class="mt-4">Community Area Clusters (IQR Method)</h5>
+<p>Q1: {{ outliers.q1 }}, Q3: {{ outliers.q3 }}, IQR: {{ outliers.iqr }}</p>
+<p>Outlier bounds: [{{ outliers.lower }}, {{ outliers.upper }}]</p>
+<img class="chart-img" src="{{ url_for('static', filename='charts/12_community_area_boxplot.png') }}">
+
+<h6>Outlier Community Areas</h6>
+{{ outliers.outliers_table | safe }}
+
+<h5 class="mt-4">Crime Cross-Correlation</h5>
+{{ corr_table | safe }}
+<img class="chart-img" src="{{ url_for('static', filename='charts/13_correlation_matrix.png') }}">
+{% endblock %}
